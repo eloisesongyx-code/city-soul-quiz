@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { CITY_PROFILES } from '../lib/city-profiles'
 
 export default function HomePage() {
   return (
@@ -19,11 +18,11 @@ export default function HomePage() {
         </p>
         <p className="mt-8 text-[15px] leading-7 text-ink/80 max-w-xl">
           24 道生活情境题，像一面安静的镜子，照出你真正在意的自由、成长、关系与节奏——
-          再把它对向八座中国城市的生活方式原型，看看你的灵魂更愿意在哪里安家。
+          再把它对向不同的中国城市生活方式原型，看看你的灵魂更愿意在哪里安家。
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3 text-[13px]">
-          {['24 道情境题', '约 5 分钟', '8 种城市原型'].map((chip) => (
+          {['24 道情境题', '约 5 分钟', '生活方式原型'].map((chip) => (
             <span
               key={chip}
               className="px-3.5 py-1.5 border hairline rounded-full text-sub tracking-wide"
@@ -39,30 +38,6 @@ export default function HomePage() {
         >
           开始探索
         </Link>
-      </section>
-
-      {/* 城市原型色块墙 */}
-      <section className="py-10 border-t hairline">
-        <p className="text-[11px] uppercase tracking-wide3 text-sub mb-5">
-          Eight City Archetypes
-        </p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          {CITY_PROFILES.map((city) => (
-            <div
-              key={city.cityId}
-              className="border hairline rounded-sm overflow-hidden"
-              style={{ borderTopColor: city.accent, borderTopWidth: 3 }}
-            >
-              <div className="px-3.5 py-4">
-                <p className="font-serif text-lg">{city.nameZh}</p>
-                <p className="text-[11px] uppercase tracking-wide2 text-sub mt-0.5">
-                  {city.nameEn}
-                </p>
-                <p className="text-xs text-sub mt-3 leading-5">{city.titleZh}</p>
-              </div>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* 说明 */}

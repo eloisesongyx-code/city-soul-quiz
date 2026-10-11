@@ -11,12 +11,6 @@ export default function Layout() {
               City Soul Quiz
             </span>
           </Link>
-          <Link
-            to="/admin/login"
-            className="text-xs text-sub hover:text-ink no-underline tracking-wide"
-          >
-            管理后台
-          </Link>
         </div>
       </header>
 
