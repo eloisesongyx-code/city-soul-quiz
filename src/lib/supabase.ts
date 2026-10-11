@@ -1,7 +1,7 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js'
 
 export const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL ?? ''
-const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY ?? ''
+export const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY ?? ''
 
 export const FUNCTIONS_BASE = SUPABASE_URL
   ? `${SUPABASE_URL.replace(/\/+$/, '')}/functions/v1`

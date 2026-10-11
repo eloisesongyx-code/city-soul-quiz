@@ -1,5 +1,5 @@
 import type { DimensionScores, CityMatch, ResultReport } from '../types/result'
-import { FUNCTIONS_BASE, isConfigured } from './supabase'
+import { FUNCTIONS_BASE, SUPABASE_ANON_KEY, isConfigured } from './supabase'
 
 export class ApiError extends Error {
   code: string
@@ -21,7 +21,9 @@ async function callFn<T>(name: string, body: unknown, token?: string): Promise<T
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        // 公开接口用 anon key 通过 Edge Function 的 JWT 门禁（会话鉴权在函数内完成），
+        // 管理接口用登录用户的 access token。
+        Authorization: `Bearer ${token ?? SUPABASE_ANON_KEY}`,
       },
       body: JSON.stringify(body),
     })
