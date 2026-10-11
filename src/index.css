@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --paper: #f6f3ed;
+  --ink: #20201e;
+  --sub: #77736c;
+  --line: #ddd7cd;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* 简单的杂志感竖线分隔 */
+.hairline {
+  border-color: var(--line);
+}
+
+/* 防止长内容横向溢出 */
+.overflow-guard {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* 无障碍：键盘焦点可见 */
+:focus-visible {
+  outline: 2px solid #20201e;
+  outline-offset: 2px;
+}
+
+/* 降低动画偏好 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
